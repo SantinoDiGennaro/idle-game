@@ -1,0 +1,25 @@
+@if (resources) {
+  <div style="display: flex">
+    <p>{{ resources.primaryResource.name | titlecase}}
+      : {{ resources.primaryResource.amount | currency: 'it-It' : '🙏' : '1.0-0' }}</p>
+    <p>{{ resources.secondaryResource.name | titlecase}}
+      : {{ resources.secondaryResource.amount | currency: 'it-It' : '👨🏻‍⚖️' : '1.0-0' }}</p>
+  </div>
+
+  <div style="display: flex">
+    <p>🙏 / Secondo: {{ resources.primaryResource.perSecond | currency: '' : '' : '1.0-1' }}</p>
+
+  </div>
+
+  <button (click)="increaseResources()">{{ resources.primaryResource.buttonLabel | titlecase }}</button>
+}
+<br>
+
+<div style="display: flex; flex-direction: column">
+  @for (structure of structures; track structure.id) {
+    <button style="width: 120px; text-align: start" (click)="purchaseStructure(structure.id)" [disabled]="structure.costPrimary > resources.primaryResource.amount || structure.unlockedAtSecondaryResource > resources.secondaryResource.amount">
+      {{ structure.name | titlecase}}
+      {{ structure.costPrimary | currency: 'it-It' : '🙏' : '1.0-0' }}
+    </button>
+  }
+</div>

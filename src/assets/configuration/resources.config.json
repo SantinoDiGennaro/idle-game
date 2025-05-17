@@ -1,0 +1,15 @@
+{
+  "resources": {
+    "primaryResource": {
+      "name": "fede",
+      "amount": 0,
+      "perClick": 1,
+      "perSecond": 0,
+      "buttonLabel": "predica"
+    },
+    "secondaryResource": {
+      "name": "fedeli",
+      "amount": 0
+    }
+  }
+}

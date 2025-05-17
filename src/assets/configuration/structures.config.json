@@ -1,0 +1,37 @@
+{
+  "structures": [
+    {
+      "id": "fedele",
+      "name": "Fedele",
+      "costPrimary": 10,
+      "costSecondary": 0,
+      "productionBoost": 0.1,
+      "productionSecondaryBoost": 1,
+      "unlockedAtSecondaryResource": 0
+    },
+    {
+      "id": "parrocchia",
+      "name": "Parrocchia",
+      "costPrimary": 100,
+      "costSecondary": 10,
+      "productionBoost": 1,
+      "unlockedAtSecondaryResource": 10
+    },
+    {
+      "id": "chiesa",
+      "name": "Chiesa",
+      "costPrimary": 1000,
+      "costSecondary": 50,
+      "productionBoost": 10,
+      "unlockedAtSecondaryResource": 50
+    },
+    {
+      "id": "monastero",
+      "name": "Monastero",
+      "costPrimary": 10000,
+      "costSecondary": 200,
+      "productionBoost": 100,
+      "unlockedAtSecondaryResource": 200
+    }
+  ]
+}
