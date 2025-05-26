@@ -4,6 +4,7 @@ import {GamePageRoutingModule} from './game-page-routing.module';
 import { GamePageComponent } from './game-page/game-page.component';
 import {ConfigGetterService} from '../../providers/services/config-getter.service';
 import {provideHttpClient} from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -14,6 +15,7 @@ import {provideHttpClient} from '@angular/common/http';
   imports: [
     CommonModule,
     GamePageRoutingModule,
+    MatButtonModule,
   ],
   providers: [
     ConfigGetterService,

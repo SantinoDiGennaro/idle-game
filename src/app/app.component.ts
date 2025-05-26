@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {ConfigGetterService} from './providers/services/config-getter.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'idle-game';
+  #configService = inject(ConfigGetterService);
+
+  save(){
+    this.#configService.saveData();
+  }
 }

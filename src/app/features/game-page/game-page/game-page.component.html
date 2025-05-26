@@ -1,23 +1,24 @@
 @if (resources) {
-  <div style="display: flex">
+<!-- cambiare simbolo per non essere hardcodato -->
+  <div style="display: flex; margin-block:1rem; justify-content: space-evenly">
     <p>{{ resources.primaryResource.name | titlecase}}
       : {{ resources.primaryResource.amount | currency: 'it-It' : '🙏' : '1.0-0' }}</p>
     <p>{{ resources.secondaryResource.name | titlecase}}
       : {{ resources.secondaryResource.amount | currency: 'it-It' : '👨🏻‍⚖️' : '1.0-0' }}</p>
   </div>
 
-  <div style="display: flex">
+  <div style="display: flex; justify-content: center">
     <p>🙏 / Secondo: {{ resources.primaryResource.perSecond | currency: '' : '' : '1.0-1' }}</p>
 
   </div>
 
-  <button (click)="increaseResources()">{{ resources.primaryResource.buttonLabel | titlecase }}</button>
+  <button (click)="increaseResources()" style="margin-inline: 40%; width: 20%; margin-block:0.5rem">{{ resources.primaryResource.buttonLabel | titlecase }}</button>
 }
 <br>
 
-<div style="display: flex; flex-direction: column">
+<div style="display: flex; flex-direction: column; gap:0.5rem; width: 100%; align-items: center">
   @for (structure of structures; track structure.id) {
-    <button style="width: 120px; text-align: start" (click)="purchaseStructure(structure.id)" [disabled]="structure.costPrimary > resources.primaryResource.amount || structure.unlockedAtSecondaryResource > resources.secondaryResource.amount">
+    <button mat-button style="width: 80%; text-align: start; border: 1px solid black" (click)="purchaseStructure(structure.id)" [disabled]="structure.costPrimary > resources.primaryResource.amount || structure.unlockedAtSecondaryResource > resources.secondaryResource.amount">
       {{ structure.name | titlecase}}
       {{ structure.costPrimary | currency: 'it-It' : '🙏' : '1.0-0' }}
     </button>

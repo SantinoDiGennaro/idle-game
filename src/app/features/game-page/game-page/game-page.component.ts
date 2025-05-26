@@ -66,8 +66,9 @@ export class GamePageComponent {
 
   private rescourcesOnTime(): void {
     setInterval(() => {
-      console.log('increased resources', this.resources.primaryResource.perSecond);
       this.resources.primaryResource.amount += this.resources.primaryResource.perSecond ?? 0;
+      this.#configService.structureConfig.next(this.structures);
+      this.#configService.resourceConfig.next(this.resources);
     }, 1000)
   }
 }
