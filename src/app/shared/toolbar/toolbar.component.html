@@ -1,0 +1,11 @@
+@if (info) {
+  <mat-toolbar style="background: lightblue; display: flex; justify-content: space-between">
+    <span style="font-size: larger; font-weight: bolder">{{ info.title | uppercase }}</span>
+    <span style="display: flex; align-items: center">
+      {{ info.version }}
+<!--      <button mat-icon-button (click)="save.emit()">-->
+<!--        <mat-icon style="margin-bottom: 5px">save</mat-icon>-->
+<!--      </button>-->
+    </span>
+  </mat-toolbar>
+}
